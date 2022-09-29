@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnbn7a5kkwe18"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_f5jc5"]
+[ext_resource type="Theme" uid="uid://bae6p4we52fpc" path="res://theme.tres" id="2_hsik8"]
+[ext_resource type="PackedScene" uid="uid://blkepaeyvbhj3" path="res://board.tscn" id="3_o2ghk"]
+
+[sub_resource type="Theme" id="Theme_ei2ij"]
+
+[node name="Main" type="CanvasLayer"]
+script = ExtResource("1_f5jc5")
+
+[node name="Board" parent="." instance=ExtResource("3_o2ghk")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Menu" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -282.5
+offset_right = 184.0
+offset_bottom = 282.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ei2ij")
+
+[node name="ClientServer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -61.0
+offset_right = 61.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_hsik8")
+theme_override_constants/separation = 10
+
+[node name="Server" type="Button" parent="Menu/ClientServer"]
+layout_mode = 2
+offset_right = 123.0
+offset_bottom = 56.0
+text = "Server"
+
+[node name="Client" type="Button" parent="Menu/ClientServer"]
+layout_mode = 2
+offset_top = 66.0
+offset_right = 123.0
+offset_bottom = 122.0
+text = "Client"
+
+[node name="SpymasterButton" type="CheckButton" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.5
+offset_right = 125.5
+offset_bottom = 56.0
+grow_horizontal = 2
+theme = ExtResource("2_hsik8")
+text = "Spy Master"
+
+[connection signal="pressed" from="Menu/ClientServer/Server" to="." method="_on_server_pressed"]
+[connection signal="pressed" from="Menu/ClientServer/Client" to="." method="_on_client_pressed"]
+[connection signal="toggled" from="SpymasterButton" to="." method="_on_spymaster_button_toggled"]

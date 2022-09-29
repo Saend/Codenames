@@ -1,0 +1,52 @@
+[gd_scene load_steps=13 format=3 uid="uid://deiwgp4yrqy2k"]
+
+[ext_resource type="Script" path="res://card.gd" id="2_ea7kg"]
+[ext_resource type="FontFile" uid="uid://pwo8d5wt64ow" path="res://Fonts/Roboto-Bold.ttf" id="2_k2y0r"]
+[ext_resource type="Texture2D" uid="uid://bcurl0oiw1pqa" path="res://SVGs/blank_front.svg" id="3_650pt"]
+[ext_resource type="Texture2D" uid="uid://drpashmuanj06" path="res://SVGs/innocent_front.svg" id="4_xdt6e"]
+[ext_resource type="Texture2D" uid="uid://6p1rl1g4w8ho" path="res://SVGs/blue_front.svg" id="5_v7cy4"]
+[ext_resource type="Texture2D" uid="uid://q7a4jv4d88f0" path="res://SVGs/red_front.svg" id="6_1l8t2"]
+[ext_resource type="Texture2D" uid="uid://v1x8gvn4bvxw" path="res://SVGs/assassin_front.svg" id="7_3gmgt"]
+[ext_resource type="Texture2D" uid="uid://jgq4xqj2kctw" path="res://SVGs/blank_back.svg" id="8_7bome"]
+[ext_resource type="Texture2D" uid="uid://cj50gs11cmges" path="res://SVGs/innocent_back.svg" id="9_gh43s"]
+[ext_resource type="Texture2D" uid="uid://diayfoju7o5j0" path="res://SVGs/blue_back.svg" id="10_2gnfk"]
+[ext_resource type="Texture2D" uid="uid://bcwhcfbweavn0" path="res://SVGs/red_back.svg" id="11_1e7fp"]
+[ext_resource type="Texture2D" uid="uid://cmlt7dk8hoo0b" path="res://SVGs/assassin_back.svg" id="12_rfrim"]
+
+[node name="Card" type="TextureButton"]
+offset_right = 256.0
+offset_bottom = 162.0
+texture_normal = ExtResource("3_650pt")
+script = ExtResource("2_ea7kg")
+assassin_back_texture = ExtResource("12_rfrim")
+assassin_front_texture = ExtResource("7_3gmgt")
+blank_back_texture = ExtResource("8_7bome")
+blank_front_texture = ExtResource("3_650pt")
+blue_back_texture = ExtResource("10_2gnfk")
+blue_front_texture = ExtResource("5_v7cy4")
+innocent_back_texture = ExtResource("9_gh43s")
+innocent_front_texture = ExtResource("4_xdt6e")
+red_back_texture = ExtResource("11_1e7fp")
+red_front_texture = ExtResource("6_1l8t2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -16.0
+offset_right = -19.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k2y0r")
+theme_override_font_sizes/font_size = 25
+text = "Codename"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="button_up" from="." to="." method="_on_card_button_up"]

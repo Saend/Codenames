@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Control",
+"class": &"Board",
+"language": &"GDScript",
+"path": "res://board.gd"
+}, {
+"base": "TextureButton",
+"class": &"Card",
+"language": &"GDScript",
+"path": "res://card.gd"
+}, {
+"base": "Resource",
+"class": &"CardData",
+"language": &"GDScript",
+"path": "res://card_data.gd"
+}, {
+"base": "RefCounted",
+"class": &"Deck",
+"language": &"GDScript",
+"path": "res://deck.gd"
+}]
+_global_script_class_icons={
+"Board": "",
+"Card": "",
+"CardData": "",
+"Deck": ""
+}
+
+[application]
+
+config/name="Codenames"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.0", "Vulkan Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+vulkan/rendering/back_end=1
