@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmlt7dk8hoo0b"
-path="res://.godot/imported/assassin_back.svg-9572090c8dbc18edff9952577411461b.ctex"
+uid="uid://cj50gs11cmges"
+path="res://.godot/imported/innocent_back.svg-9ecbfb9193ed7177043c2dd0e0dead10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SVGs/assassin_back.svg"
-dest_files=["res://.godot/imported/assassin_back.svg-9572090c8dbc18edff9952577411461b.ctex"]
+source_file="res://Images/innocent_back.svg"
+dest_files=["res://.godot/imported/innocent_back.svg-9ecbfb9193ed7177043c2dd0e0dead10.ctex"]
 
 [params]
 

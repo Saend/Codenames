@@ -1,0 +1,182 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1bhr2yo43ev3"]
+
+[ext_resource type="FontFile" uid="uid://d08etq77gxd0h" path="res://Fonts/Victor.otf" id="1_adh70"]
+[ext_resource type="Theme" uid="uid://b6curcx6e1af1" path="res://theme.tres" id="1_gomtl"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_o6q5n"]
+
+[sub_resource type="Theme" id="Theme_vdvbn"]
+HBoxContainer/constants/separation = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj86e"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_right = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gomtl")
+script = ExtResource("1_o6q5n")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -299.0
+offset_right = 299.0
+offset_bottom = 264.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.278431)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_adh70")
+theme_override_font_sizes/font_size = 150
+text = "CODENAMES"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.0
+offset_top = -104.0
+offset_right = 210.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vdvbn")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+offset_right = 424.0
+offset_bottom = 201.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 392.0
+offset_bottom = 185.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+offset_right = 360.0
+offset_bottom = 30.0
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2i(64, 0)
+offset_right = 78.0
+offset_bottom = 30.0
+size_flags_horizontal = 8
+text = "PLAYER"
+horizontal_alignment = 2
+
+[node name="PlayerName" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+offset_left = 86.0
+offset_right = 272.0
+offset_bottom = 30.0
+size_flags_horizontal = 3
+placeholder_text = " name"
+max_length = 16
+
+[node name="Placeholder" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2i(80, 0)
+offset_left = 280.0
+offset_top = 1.0
+offset_right = 360.0
+offset_bottom = 28.0
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
+offset_top = 34.0
+offset_right = 360.0
+offset_bottom = 50.0
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxFlat_rj86e")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+offset_top = 54.0
+offset_right = 360.0
+offset_bottom = 97.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2i(64, 0)
+offset_top = 6.0
+offset_right = 80.0
+offset_bottom = 36.0
+size_flags_horizontal = 8
+text = "SERVER"
+horizontal_alignment = 2
+
+[node name="ServerAddress" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+offset_left = 90.0
+offset_right = 274.0
+offset_bottom = 43.0
+size_flags_horizontal = 3
+placeholder_text = " address"
+max_length = 16
+
+[node name="JoinServer" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+offset_left = 284.0
+offset_right = 360.0
+offset_bottom = 43.0
+size_flags_horizontal = 4
+text = "Join"
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+offset_left = 168.0
+offset_top = 101.0
+offset_right = 192.0
+offset_bottom = 122.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 15
+text = " OR"
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+offset_top = 126.0
+offset_right = 360.0
+offset_bottom = 169.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2i(64, 0)
+offset_top = 6.0
+offset_right = 80.0
+offset_bottom = 36.0
+size_flags_horizontal = 8
+text = "     PORT"
+horizontal_alignment = 2
+
+[node name="PortNumber" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+offset_left = 90.0
+offset_right = 253.0
+offset_bottom = 43.0
+size_flags_horizontal = 3
+placeholder_text = "  number"
+max_length = 16
+
+[node name="CreateServer" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+offset_left = 263.0
+offset_right = 360.0
+offset_bottom = 43.0
+size_flags_horizontal = 4
+text = "Create"
+
+[node name="QuitButton" type="Button" parent="."]
+custom_minimum_size = Vector2i(80, 40)
+offset_left = 1811.0
+offset_top = 21.0
+offset_right = 1891.0
+offset_bottom = 61.0
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/JoinServer" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/CreateServer" to="." method="_on_create_server_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

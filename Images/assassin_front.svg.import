@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drpashmuanj06"
-path="res://.godot/imported/innocent_front.svg-f27b36c6d4c01072b2a1f4dc4321bb27.ctex"
+uid="uid://v1x8gvn4bvxw"
+path="res://.godot/imported/assassin_front.svg-405e25c01f8f5c22c8dc424a06b7d112.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SVGs/innocent_front.svg"
-dest_files=["res://.godot/imported/innocent_front.svg-f27b36c6d4c01072b2a1f4dc4321bb27.ctex"]
+source_file="res://Images/assassin_front.svg"
+dest_files=["res://.godot/imported/assassin_front.svg-405e25c01f8f5c22c8dc424a06b7d112.ctex"]
 
 [params]
 

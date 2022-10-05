@@ -25,7 +25,7 @@ func get_cards():
 func get_board_size():
 	return container.get_child_count()
 
-func set_show_type(show_type):
+func set_spymaster_mode(show_type):
 	for card in container.get_children():
 		card.show_type = show_type
 		card.refresh()

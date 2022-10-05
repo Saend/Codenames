@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jgq4xqj2kctw"
-path="res://.godot/imported/blank_back.svg-29966fe171c76142f609215ef939b39d.ctex"
+uid="uid://drpashmuanj06"
+path="res://.godot/imported/innocent_front.svg-061b73b193ac1cbb047c9b420b9ec626.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SVGs/blank_back.svg"
-dest_files=["res://.godot/imported/blank_back.svg-29966fe171c76142f609215ef939b39d.ctex"]
+source_file="res://Images/innocent_front.svg"
+dest_files=["res://.godot/imported/innocent_front.svg-061b73b193ac1cbb047c9b420b9ec626.ctex"]
 
 [params]
 

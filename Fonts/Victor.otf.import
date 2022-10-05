@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ce0ofpxuxnmxt"
-path="res://.godot/imported/Nau Sea.otf-d9b7896efda3a055ec5e3cea7bf1eb72.fontdata"
+uid="uid://d08etq77gxd0h"
+path="res://.godot/imported/Victor.otf-0f34053b23a49b5f52660b7afb95b99e.fontdata"
 
 [deps]
 
-source_file="res://Fonts/Nau Sea.otf"
-dest_files=["res://.godot/imported/Nau Sea.otf-d9b7896efda3a055ec5e3cea7bf1eb72.fontdata"]
+source_file="res://Fonts/Victor.otf"
+dest_files=["res://.godot/imported/Victor.otf-0f34053b23a49b5f52660b7afb95b99e.fontdata"]
 
 [params]
 

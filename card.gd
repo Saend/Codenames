@@ -18,7 +18,7 @@ class_name Card
 
 # VARIABLES
 var word: String = "Codename"
-var type: String = "Innocent"
+var type: String = ""
 var played: bool = false
 
 var show_type: bool
@@ -47,8 +47,15 @@ func refresh():
 
 
 func _on_card_button_up():
-	rpc("play_card")
+	if multiplayer.multiplayer_peer:
+		rpc("play_card")
+	else:
+		play_card()
 	
 @rpc(any_peer, call_local) func play_card():
 	played = true
 	refresh()
+
+
+func _on_card_focus_entered():
+	pass # Replace with function body.

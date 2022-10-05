@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q7a4jv4d88f0"
-path="res://.godot/imported/red_front.svg-1c812561f93d29f05a8d36aa2133bfa4.ctex"
+path="res://.godot/imported/red_front.svg-2a1c265fdba5a0bac1797d3fe1d45943.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SVGs/red_front.svg"
-dest_files=["res://.godot/imported/red_front.svg-1c812561f93d29f05a8d36aa2133bfa4.ctex"]
+source_file="res://Images/red_front.svg"
+dest_files=["res://.godot/imported/red_front.svg-2a1c265fdba5a0bac1797d3fe1d45943.ctex"]
 
 [params]
 

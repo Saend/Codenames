@@ -7,11 +7,15 @@ func _init(path: = ""):
 	if not path.is_empty(): read_word_list(path)
 
 func read_word_list(path: String):
-	var file := File.new()
-	file.open(path, File.READ)
+	var file := FileAccess.open(path, FileAccess.READ)
+	var error := file.get_open_error()
+	if error:
+		print_debug("Could not open word list file: %", error)
+		return
+	
 	while file.get_position() < file.get_length():
 		word_list.append(file.get_line())
-	file.close()
+	file = null
 
 
 func deal_cards(total: int = 25, assassins: int = 1, blues: int = 9, reds: int = 8):

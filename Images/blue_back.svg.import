@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj50gs11cmges"
-path="res://.godot/imported/innocent_back.svg-96d7825c00c556bde5979a3176af3f7e.ctex"
+uid="uid://diayfoju7o5j0"
+path="res://.godot/imported/blue_back.svg-1d81e51d90a4b3e7b83b31d6f8c4b62b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SVGs/innocent_back.svg"
-dest_files=["res://.godot/imported/innocent_back.svg-96d7825c00c556bde5979a3176af3f7e.ctex"]
+source_file="res://Images/blue_back.svg"
+dest_files=["res://.godot/imported/blue_back.svg-1d81e51d90a4b3e7b83b31d6f8c4b62b.ctex"]
 
 [params]
 

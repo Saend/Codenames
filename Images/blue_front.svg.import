@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v1x8gvn4bvxw"
-path="res://.godot/imported/assassin_front.svg-7421391c7b094c4cfe735002fbde44ff.ctex"
+uid="uid://6p1rl1g4w8ho"
+path="res://.godot/imported/blue_front.svg-a58a9bd6be7d6d7e459343916ac7274c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SVGs/assassin_front.svg"
-dest_files=["res://.godot/imported/assassin_front.svg-7421391c7b094c4cfe735002fbde44ff.ctex"]
+source_file="res://Images/blue_front.svg"
+dest_files=["res://.godot/imported/blue_front.svg-a58a9bd6be7d6d7e459343916ac7274c.ctex"]
 
 [params]
 
