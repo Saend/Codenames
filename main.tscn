@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnbn7a5kkwe18"]
+[gd_scene load_steps=7 format=3 uid="uid://cy2rd5ue8l8n5"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_f5jc5"]
 [ext_resource type="Texture2D" uid="uid://ddoxicbwrt2cj" path="res://Images/pexels-peter-fazekas-1170576_rotated.jpg" id="2_bcwqi"]
 [ext_resource type="Theme" uid="uid://b6curcx6e1af1" path="res://theme.tres" id="3_0ggon"]
 [ext_resource type="PackedScene" uid="uid://blkepaeyvbhj3" path="res://board.tscn" id="3_o2ghk"]
+[ext_resource type="PackedScene" uid="uid://5mc3l1lax2ia" path="res://players_ui.tscn" id="4_gd2p0"]
 [ext_resource type="PackedScene" uid="uid://c1bhr2yo43ev3" path="res://main_menu.tscn" id="5_r1cp7"]
 
 [node name="Main" type="CanvasLayer"]
@@ -18,357 +19,97 @@ grow_vertical = 2
 texture = ExtResource("2_bcwqi")
 ignore_texture_size = true
 
-[node name="UI" type="Control" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="UI" type="Control" parent="MarginContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1904.0
+offset_bottom = 1064.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0ggon")
+
+[node name="GameUI" type="Control" parent="MarginContainer/UI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_0ggon")
 
-[node name="GameUI" type="Control" parent="UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/UI/GameUI"]
+offset_right = 1888.0
+offset_bottom = 1048.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="UI/GameUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.27451, 0.27451, 0.27451, 0.129412)
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GameUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/GameUI/MarginContainer"]
-layout_mode = 2
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 1880.0
-offset_bottom = 1040.0
 theme_override_constants/separation = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameUI/MarginContainer/HBoxContainer"]
-layout_mode = 2
-offset_top = 379.0
-offset_right = 256.0
-offset_bottom = 620.0
+[node name="Board" parent="MarginContainer/UI/GameUI/HBoxContainer" instance=ExtResource("3_o2ghk")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1582.0
+offset_bottom = 1048.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_vertical = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/UI/GameUI/HBoxContainer"]
+offset_left = 1612.0
+offset_top = 364.0
+offset_right = 1888.0
+offset_bottom = 684.0
+size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 30
-
-[node name="SpymasterPanel" type="PanelContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2i(256, 0)
-layout_mode = 2
-offset_right = 256.0
-offset_bottom = 129.0
-size_flags_vertical = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/SpymasterPanel"]
-layout_mode = 2
-offset_right = 256.0
-offset_bottom = 129.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/SpymasterPanel/MarginContainer"]
-layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 246.0
-offset_bottom = 119.0
-
-[node name="Label" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_right = 142.0
-offset_bottom = 30.0
-size_flags_horizontal = 0
-text = "SPYMASTERS"
-
-[node name="HSeparator" type="HSeparator" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 38.0
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 42.0
-offset_right = 236.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SpymasterList" type="ItemList" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 226.0
-offset_bottom = 10.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-auto_height = true
-text_overrun_behavior = 1
-
-[node name="JoinSpymastersButton" type="Button" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 66.0
-offset_right = 236.0
-offset_bottom = 109.0
-text = "Join"
-
-[node name="PlayerPanel" type="PanelContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2i(256, 0)
-layout_mode = 2
-offset_top = 159.0
-offset_right = 256.0
-offset_bottom = 241.0
-size_flags_vertical = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/PlayerPanel"]
-layout_mode = 2
-offset_right = 256.0
-offset_bottom = 82.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/PlayerPanel/MarginContainer"]
-layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 246.0
-offset_bottom = 72.0
-
-[node name="Label" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_right = 92.0
-offset_bottom = 30.0
-size_flags_horizontal = 0
-text = "PLAYERS"
-
-[node name="HSeparator" type="HSeparator" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 38.0
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 42.0
-offset_right = 236.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-
-[node name="PlayerList" type="ItemList" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/PlayerPanel/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 226.0
-offset_bottom = 10.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-auto_height = true
-text_overrun_behavior = 1
-
-[node name="LogPanel" type="PanelContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-offset_top = 365.0
-offset_right = 233.0
-offset_bottom = 1000.0
-size_flags_vertical = 3
-
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel"]
-custom_minimum_size = Vector2i(0, 200)
-layout_mode = 2
-offset_right = 233.0
-offset_bottom = 635.0
-follow_focus = true
-horizontal_scroll_mode = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer"]
-clip_contents = true
-layout_mode = 2
-offset_right = 223.0
-offset_bottom = 219.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer/MarginContainer"]
-layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 213.0
-offset_bottom = 209.0
-
-[node name="Label" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_right = 205.0
-offset_bottom = 25.0
-theme_override_font_sizes/font_size = 18
-text = "Server started."
-
-[node name="Label2" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 29.0
-offset_right = 205.0
-offset_bottom = 54.0
-theme_override_font_sizes/font_size = 18
-text = "Anne joined."
-
-[node name="Label3" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 58.0
-offset_right = 205.0
-offset_bottom = 83.0
-theme_override_font_sizes/font_size = 18
-text = "Anne left."
-
-[node name="Label4" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 87.0
-offset_right = 205.0
-offset_bottom = 112.0
-theme_override_font_sizes/font_size = 18
-text = "Maud joined."
-
-[node name="Label5" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 116.0
-offset_right = 205.0
-offset_bottom = 141.0
-theme_override_font_sizes/font_size = 18
-text = "Maud picked FLOWER"
-
-[node name="Label6" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 145.0
-offset_right = 205.0
-offset_bottom = 170.0
-theme_override_font_sizes/font_size = 18
-text = "Anne is now a Spymaster"
-
-[node name="Label7" type="Label" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 174.0
-offset_right = 205.0
-offset_bottom = 199.0
-theme_override_font_sizes/font_size = 18
-text = "Baptiste reset board."
-
-[node name="ButtonPanel" type="PanelContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-offset_top = 217.0
-offset_right = 208.0
-offset_bottom = 257.0
-size_flags_vertical = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/ButtonPanel"]
-layout_mode = 2
-offset_right = 208.0
-offset_bottom = 40.0
-size_flags_vertical = 4
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HFlowContainer" type="HBoxContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/ButtonPanel/MarginContainer"]
-layout_mode = 2
-offset_left = 5.0
-offset_top = 10.0
-offset_right = 251.0
-offset_bottom = 53.0
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Button" type="Button" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/ButtonPanel/MarginContainer/HFlowContainer"]
-layout_mode = 2
-offset_right = 65.0
-offset_bottom = 35.0
-size_flags_horizontal = 3
-text = "Reset
-"
-
-[node name="Button2" type="Button" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/ButtonPanel/MarginContainer/HFlowContainer"]
-layout_mode = 2
-offset_left = 75.0
-offset_right = 198.0
-offset_bottom = 35.0
-size_flags_horizontal = 3
-text = "Disconnect"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="UI/GameUI/MarginContainer/HBoxContainer"]
-layout_mode = 2
-offset_left = 286.0
-offset_right = 1840.0
-offset_bottom = 1000.0
-size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-offset_right = 1554.0
-offset_bottom = 43.0
-alignment = 1
+[node name="PlayersUI" parent="MarginContainer/UI/GameUI/HBoxContainer/VBoxContainer2" instance=ExtResource("4_gd2p0")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 276.0
+offset_bottom = 261.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="NewGameButton" type="Button" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-offset_right = 139.0
-offset_bottom = 43.0
+[node name="NewGameButton" type="Button" parent="MarginContainer/UI/GameUI/HBoxContainer/VBoxContainer2"]
+offset_left = 68.0
+offset_top = 277.0
+offset_right = 207.0
+offset_bottom = 320.0
+size_flags_horizontal = 4
 text = "New Game"
 
-[node name="VSeparator" type="VSeparator" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-offset_left = 143.0
-offset_right = 1403.0
+[node name="DisconnectButton" type="Button" parent="MarginContainer/UI/GameUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -147.0
 offset_bottom = 43.0
-size_flags_horizontal = 3
-
-[node name="DisconnectButton" type="Button" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-offset_left = 1407.0
-offset_right = 1554.0
-offset_bottom = 43.0
+grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "Disconnect
 "
 
-[node name="Board" parent="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("3_o2ghk")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 59.0
-offset_right = 1554.0
-offset_bottom = 1000.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="MainMenu" parent="UI" instance=ExtResource("5_r1cp7")]
+[node name="MainMenu" parent="MarginContainer/UI" instance=ExtResource("5_r1cp7")]
 visible = false
-layout_mode = 1
 
-[connection signal="pressed" from="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer/JoinSpymastersButton" to="." method="_on_join_spymasters_button_pressed"]
-[connection signal="pressed" from="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="UI/GameUI/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/DisconnectButton" to="." method="_on_disconnect_button_pressed"]
-[connection signal="create_server" from="UI/MainMenu" to="." method="_on_main_menu_create_server"]
-[connection signal="exit" from="UI/MainMenu" to="." method="_on_main_menu_exit"]
-[connection signal="join_server" from="UI/MainMenu" to="." method="_on_main_menu_join_server"]
+[connection signal="join_spymasters" from="MarginContainer/UI/GameUI/HBoxContainer/VBoxContainer2/PlayersUI" to="." method="_on_players_ui_join_spymasters"]
+[connection signal="pressed" from="MarginContainer/UI/GameUI/HBoxContainer/VBoxContainer2/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/UI/GameUI/DisconnectButton" to="." method="_on_disconnect_button_pressed"]
+[connection signal="create_server" from="MarginContainer/UI/MainMenu" to="." method="_on_main_menu_create_server"]
+[connection signal="exit" from="MarginContainer/UI/MainMenu" to="." method="_on_main_menu_exit"]
+[connection signal="join_server" from="MarginContainer/UI/MainMenu" to="." method="_on_main_menu_join_server"]

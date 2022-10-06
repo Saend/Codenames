@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1bhr2yo43ev3"]
+[gd_scene load_steps=5 format=3 uid="uid://c1bhr2yo43ev3"]
 
 [ext_resource type="FontFile" uid="uid://d08etq77gxd0h" path="res://Fonts/Victor.otf" id="1_adh70"]
 [ext_resource type="Theme" uid="uid://b6curcx6e1af1" path="res://theme.tres" id="1_gomtl"]
@@ -6,8 +6,6 @@
 
 [sub_resource type="Theme" id="Theme_vdvbn"]
 HBoxContainer/constants/separation = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj86e"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,12 +18,13 @@ theme = ExtResource("1_gomtl")
 script = ExtResource("1_o6q5n")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -299.0
 offset_right = 299.0
-offset_bottom = 264.0
+offset_bottom = 139.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -37,144 +36,187 @@ theme_override_font_sizes/font_size = 150
 text = "CODENAMES"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -214.0
-offset_top = -104.0
-offset_right = 210.0
-offset_bottom = 78.0
+offset_left = -260.0
+offset_top = -116.5
+offset_right = 260.0
+offset_bottom = 116.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_vdvbn")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-offset_right = 424.0
-offset_bottom = 201.0
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 16
+layout_mode = 2
+offset_right = 520.0
+offset_bottom = 233.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-offset_left = 32.0
-offset_top = 16.0
-offset_right = 392.0
-offset_bottom = 185.0
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 25.0
+offset_right = 470.0
+offset_bottom = 208.0
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 0
+columns = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-offset_right = 360.0
-offset_bottom = 30.0
-theme_override_constants/separation = 8
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="PlayerLbel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(64, 0)
-offset_right = 78.0
-offset_bottom = 30.0
+layout_mode = 2
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 80.0
+offset_bottom = 36.0
 size_flags_horizontal = 8
 text = "PLAYER"
 horizontal_alignment = 2
 
-[node name="PlayerName" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-offset_left = 86.0
-offset_right = 272.0
-offset_bottom = 30.0
+[node name="PlayerName" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+offset_left = 96.0
+offset_right = 307.0
+offset_bottom = 43.0
 size_flags_horizontal = 3
 placeholder_text = " name"
 max_length = 16
 
-[node name="Placeholder" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="JoinServer2" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 323.0
+offset_right = 420.0
+offset_bottom = 43.0
+text = "Empty"
+
+[node name="Placeholder3" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-offset_left = 280.0
-offset_top = 1.0
-offset_right = 360.0
-offset_bottom = 28.0
-
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer"]
-offset_top = 34.0
-offset_right = 360.0
-offset_bottom = 50.0
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxFlat_rj86e")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-offset_top = 54.0
-offset_right = 360.0
-offset_bottom = 97.0
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2i(64, 0)
-offset_top = 6.0
+layout_mode = 2
+offset_top = 43.0
 offset_right = 80.0
-offset_bottom = 36.0
+offset_bottom = 70.0
+
+[node name="Placeholder5" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2i(80, 0)
+layout_mode = 2
+offset_left = 96.0
+offset_top = 43.0
+offset_right = 307.0
+offset_bottom = 70.0
+
+[node name="Placeholder6" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2i(80, 0)
+layout_mode = 2
+offset_left = 323.0
+offset_top = 43.0
+offset_right = 420.0
+offset_bottom = 70.0
+
+[node name="ServerLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2i(64, 0)
+layout_mode = 2
+offset_top = 76.0
+offset_right = 80.0
+offset_bottom = 106.0
 size_flags_horizontal = 8
 text = "SERVER"
 horizontal_alignment = 2
 
-[node name="ServerAddress" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-offset_left = 90.0
-offset_right = 274.0
-offset_bottom = 43.0
+[node name="ServerAddress" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+offset_left = 96.0
+offset_top = 70.0
+offset_right = 307.0
+offset_bottom = 113.0
 size_flags_horizontal = 3
 placeholder_text = " address"
 max_length = 16
 
-[node name="JoinServer" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-offset_left = 284.0
-offset_right = 360.0
-offset_bottom = 43.0
-size_flags_horizontal = 4
+[node name="JoinServer" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+offset_left = 323.0
+offset_top = 70.0
+offset_right = 420.0
+offset_bottom = 113.0
 text = "Join"
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
-offset_left = 168.0
-offset_top = 101.0
-offset_right = 192.0
-offset_bottom = 122.0
+[node name="Placeholder2" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2i(80, 0)
+layout_mode = 2
+offset_top = 113.0
+offset_right = 80.0
+offset_bottom = 140.0
+
+[node name="OrLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2i(80, 0)
+layout_mode = 2
+offset_left = 161.0
+offset_top = 116.0
+offset_right = 241.0
+offset_bottom = 137.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 15
-text = " OR"
+text = "OR"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-offset_top = 126.0
-offset_right = 360.0
-offset_bottom = 169.0
+[node name="Placeholder4" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2i(80, 0)
+layout_mode = 2
+offset_left = 323.0
+offset_top = 113.0
+offset_right = 420.0
+offset_bottom = 140.0
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="PortLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(64, 0)
-offset_top = 6.0
+layout_mode = 2
+offset_left = 16.0
+offset_top = 146.0
 offset_right = 80.0
-offset_bottom = 36.0
+offset_bottom = 176.0
 size_flags_horizontal = 8
-text = "     PORT"
+text = "PORT"
 horizontal_alignment = 2
 
-[node name="PortNumber" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-offset_left = 90.0
-offset_right = 253.0
-offset_bottom = 43.0
+[node name="PortNumber" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+offset_left = 96.0
+offset_top = 140.0
+offset_right = 307.0
+offset_bottom = 183.0
 size_flags_horizontal = 3
 placeholder_text = "  number"
 max_length = 16
 
-[node name="CreateServer" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-offset_left = 263.0
-offset_right = 360.0
-offset_bottom = 43.0
-size_flags_horizontal = 4
+[node name="CreateServer" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+offset_left = 323.0
+offset_top = 140.0
+offset_right = 420.0
+offset_bottom = 183.0
 text = "Create"
 
 [node name="QuitButton" type="Button" parent="."]
 custom_minimum_size = Vector2i(80, 40)
-offset_left = 1811.0
-offset_top = 21.0
-offset_right = 1891.0
-offset_bottom = 61.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 43.0
+grow_horizontal = 0
 text = "Quit"
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/JoinServer" to="." method="_on_join_server_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/CreateServer" to="." method="_on_create_server_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/GridContainer/JoinServer2" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/GridContainer/JoinServer" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/GridContainer/CreateServer" to="." method="_on_create_server_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

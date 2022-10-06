@@ -2,6 +2,7 @@ extends Control
 class_name Board
 
 @onready var container: GridContainer = $GridContainer
+var starting_team
 
 
 @rpc(any_peer, call_local) func set_cards(cards):
@@ -13,6 +14,7 @@ class_name Board
 			card.played = cards[i].played
 			card.show_type = false
 			card.refresh()
+
 
 func get_cards():
 	var cards = []

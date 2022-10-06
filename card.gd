@@ -47,11 +47,9 @@ func refresh():
 
 
 func _on_card_button_up():
-	if multiplayer.multiplayer_peer:
-		rpc("play_card")
-	else:
-		play_card()
-	
+	rpc("play_card")
+
+
 @rpc(any_peer, call_local) func play_card():
 	played = true
 	refresh()

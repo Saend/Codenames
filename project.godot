@@ -23,11 +23,17 @@ _global_script_classes=[{
 "class": &"Deck",
 "language": &"GDScript",
 "path": "res://deck.gd"
+}, {
+"base": "Control",
+"class": &"PlayersUI",
+"language": &"GDScript",
+"path": "res://players_ui.gd"
 }]
 _global_script_class_icons={
 "Board": "",
 "Card": "",
-"Deck": ""
+"Deck": "",
+"PlayersUI": ""
 }
 
 [application]
