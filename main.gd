@@ -23,8 +23,6 @@ func _on_main_menu_exit():
 
 
 func _on_main_menu_create_server(_name, port):
-	print_debug("Starting sever on port %d." % [port])
-	
 	player_name = _name
 	
 	var peer = ENetMultiplayerPeer.new()
@@ -33,47 +31,58 @@ func _on_main_menu_create_server(_name, port):
 	multiplayer.connect("peer_connected", _peer_connected)
 	multiplayer.connect("peer_disconnected", _peer_disconnected)
 	
-	var deck := Deck.new("res://Lists/french.txt")
-	var cards: Array = deck.deal_cards(board.get_board_size())
-	sync_state(cards, players)
-	
 	set_player_info({name = player_name})
+	new_game()
+	
 	main_menu.hide()
 	game_ui.show()
 
+func new_game():
+	var deck := Deck.new("res://Lists/french.txt")
+	var cards: Array = deck.deal_cards(board.get_board_size())
+	rpc("sync_cards", cards)
+	
+	for player in players.values():
+		player.is_spymaster = false
+	rpc("sync_players", players)
+
 
 func _on_main_menu_join_server(_name, address, port: int):
-	print_debug("Connecting to %s:%d." % [address, port])
-	
 	player_name = _name
 	
 	var peer = ENetMultiplayerPeer.new()
-	peer.create_client("localhost", port)
+	peer.create_client(address, port)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.connect("connected_to_server", _connected_to_server)
 	multiplayer.connect("server_disconnected", _server_disconnected, CONNECT_DEFERRED)
 
 
-@rpc(any_peer, call_remote, reliable) func sync_state(cards, auth_players):
+@rpc(any_peer, call_local, reliable) func sync_cards(cards):
 	board.set_cards(cards)
-	for player in auth_players.values():
-		if player.is_spymaster:
-			player.index = spymaster_list.add_item(player.name)
-		else:
-			player.index = player_list.add_item(player.name)
-		players[player.id] = player
-			
+
+
+@rpc(any_peer, call_local, reliable) func sync_players(_players):
+	players = _players
+	
+	spymaster_list.clear()
+	player_list.clear()
+	
+	for player in players.values():
+		var list: ItemList = spymaster_list if player.is_spymaster else player_list
+		var index = list.add_item(player.name)
+		list.set_item_selectable(index, false)
+	
+	var id = multiplayer.get_unique_id()
+	if players.has(id):
+		join_spymasters_button.visible = not players.get(id).is_spymaster
 
 
 func _peer_connected(id):
-	print_debug("Player %d connected." % id)
-	var error = rpc_id(id, "sync_state", board.get_cards(), players)
-	if error: print_debug("Error trying to sync cards: %", error)
-
+	rpc_id(id, "sync_cards", board.get_cards())
+	rpc_id(id, "sync_players", players)
 
 
 func _connected_to_server():
-	print_debug("Server reached.")
 	rpc_id(1, "set_player_info", {name = player_name})
 	main_menu.hide()
 	game_ui.show()
@@ -83,51 +92,22 @@ func _connected_to_server():
 	var id: int = multiplayer.get_remote_sender_id()
 	if id == 0: id = 1 #Server called this directly
 	
-	var full_info
-	if players.has(id):
-		full_info = players[id].duplicate()
-	else :
-		full_info = {id = id, name = "Player %d" % id, is_spymaster = false}
+	if not players.has(id):
+		players[id] = {id = id, name = "Player %d" % id, is_spymaster = false}
 		
-	full_info.merge(info, true)
-	
-	rpc("sync_player_info", full_info)
-
-
-@rpc(any_peer, call_local, reliable) func sync_player_info(info: Dictionary):
-	if players.has(info.id):
-		if players[info.id].is_spymaster:
-			spymaster_list.remove_item(players[info.id].index)
-		else:
-			player_list.remove_item(players[info.id].index)
-
-	if info.is_spymaster:
-		info.index = spymaster_list.add_item(info.name)
-	else:
-		info.index = player_list.add_item(info.name)
-
-	players[info.id] = info
+	players[id].merge(info, true)
+	rpc("sync_players", players)
 
 
 func _on_join_spymasters_button_pressed():
 	rpc_id(1, "set_player_info", {is_spymaster = true})
 	board.set_spymaster_mode(true)
 	join_spymasters_button.hide()
-	
 
 
 func _peer_disconnected(id):
-	rpc("sync_player_disconnect", id)
-
-
-@rpc(any_peer, call_local) func sync_player_disconnect(id):
-	if players.has(id):
-		var index = players[id].index
-		if players[id].is_spymaster:
-			spymaster_list.remove_item(index)
-		else:
-			player_list.remove_item(index)
-		players.erase(id)
+	players.erase(id)
+	rpc("sync_players", players)
 
 
 func _server_disconnected():
@@ -143,3 +123,6 @@ func reset():
 	multiplayer.multiplayer_peer = null
 	get_tree().reload_current_scene()
 
+
+func _on_new_game_button_pressed():
+	new_game()
