@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfhp0jvuxr2qf"]
 
 [ext_resource type="Script" path="res://players_ui.gd" id="1_4oars"]
-[ext_resource type="Theme" path="res://theme.tres" id="1_uemre"]
+[ext_resource type="Theme" uid="uid://b6curcx6e1af1" path="res://theme.tres" id="1_uemre"]
 
 [node name="PlayersUI" type="MarginContainer"]
 anchors_preset = 15
@@ -13,7 +13,6 @@ theme = ExtResource("1_uemre")
 script = ExtResource("1_4oars")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_left = 832.0
 offset_top = 419.0
 offset_right = 1088.0
@@ -26,38 +25,32 @@ theme_override_constants/separation = 30
 
 [node name="SpymasterPanel" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2i(256, 0)
-layout_mode = 2
 offset_right = 256.0
 offset_bottom = 129.0
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/SpymasterPanel"]
-layout_mode = 2
 offset_right = 256.0
 offset_bottom = 129.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/SpymasterPanel/MarginContainer"]
-layout_mode = 2
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 246.0
 offset_bottom = 119.0
 
 [node name="Label" type="Label" parent="VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_right = 142.0
 offset_bottom = 30.0
 size_flags_horizontal = 0
 text = "SPYMASTERS"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 38.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 42.0
 offset_right = 236.0
 offset_bottom = 62.0
@@ -65,7 +58,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SpymasterList" type="ItemList" parent="VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 226.0
@@ -76,7 +68,6 @@ auto_height = true
 text_overrun_behavior = 1
 
 [node name="JoinSpymastersButton" type="Button" parent="VBoxContainer/SpymasterPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 66.0
 offset_right = 236.0
 offset_bottom = 109.0
@@ -84,39 +75,33 @@ text = "Join"
 
 [node name="PlayerPanel" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2i(256, 0)
-layout_mode = 2
 offset_top = 159.0
 offset_right = 256.0
 offset_bottom = 241.0
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PlayerPanel"]
-layout_mode = 2
 offset_right = 256.0
 offset_bottom = 82.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PlayerPanel/MarginContainer"]
-layout_mode = 2
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 246.0
 offset_bottom = 72.0
 
 [node name="Label" type="Label" parent="VBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_right = 92.0
 offset_bottom = 30.0
 size_flags_horizontal = 0
 text = "PLAYERS"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 38.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PlayerPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 42.0
 offset_right = 236.0
 offset_bottom = 62.0
@@ -125,7 +110,6 @@ grow_vertical = 2
 size_flags_vertical = 3
 
 [node name="PlayerList" type="ItemList" parent="VBoxContainer/PlayerPanel/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 226.0
@@ -137,7 +121,6 @@ text_overrun_behavior = 1
 
 [node name="LogPanel" type="PanelContainer" parent="VBoxContainer"]
 visible = false
-layout_mode = 2
 offset_top = 365.0
 offset_right = 233.0
 offset_bottom = 1000.0
@@ -145,7 +128,6 @@ size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/LogPanel"]
 custom_minimum_size = Vector2i(0, 200)
-layout_mode = 2
 offset_right = 233.0
 offset_bottom = 635.0
 follow_focus = true
@@ -153,7 +135,6 @@ horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/LogPanel/ScrollContainer"]
 clip_contents = true
-layout_mode = 2
 offset_right = 223.0
 offset_bottom = 219.0
 theme_override_constants/margin_left = 10
@@ -162,21 +143,18 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/LogPanel/ScrollContainer/MarginContainer"]
-layout_mode = 2
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 213.0
 offset_bottom = 209.0
 
 [node name="Label" type="Label" parent="VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_right = 205.0
 offset_bottom = 25.0
 theme_override_font_sizes/font_size = 18
 text = "Server started."
 
 [node name="Label2" type="Label" parent="VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 29.0
 offset_right = 205.0
 offset_bottom = 54.0
@@ -184,7 +162,6 @@ theme_override_font_sizes/font_size = 18
 text = "Anne joined."
 
 [node name="Label3" type="Label" parent="VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 58.0
 offset_right = 205.0
 offset_bottom = 83.0
@@ -192,7 +169,6 @@ theme_override_font_sizes/font_size = 18
 text = "Anne left."
 
 [node name="Label4" type="Label" parent="VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 87.0
 offset_right = 205.0
 offset_bottom = 112.0
@@ -200,7 +176,6 @@ theme_override_font_sizes/font_size = 18
 text = "Maud joined."
 
 [node name="Label5" type="Label" parent="VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 116.0
 offset_right = 205.0
 offset_bottom = 141.0
@@ -208,7 +183,6 @@ theme_override_font_sizes/font_size = 18
 text = "Maud picked FLOWER"
 
 [node name="Label6" type="Label" parent="VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 145.0
 offset_right = 205.0
 offset_bottom = 170.0
@@ -216,7 +190,6 @@ theme_override_font_sizes/font_size = 18
 text = "Anne is now a Spymaster"
 
 [node name="Label7" type="Label" parent="VBoxContainer/LogPanel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 174.0
 offset_right = 205.0
 offset_bottom = 199.0
@@ -225,14 +198,12 @@ text = "Baptiste reset board."
 
 [node name="ButtonPanel" type="PanelContainer" parent="VBoxContainer"]
 visible = false
-layout_mode = 2
 offset_top = 217.0
 offset_right = 208.0
 offset_bottom = 257.0
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonPanel"]
-layout_mode = 2
 offset_right = 208.0
 offset_bottom = 40.0
 size_flags_vertical = 4
@@ -241,7 +212,6 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="HFlowContainer" type="HBoxContainer" parent="VBoxContainer/ButtonPanel/MarginContainer"]
-layout_mode = 2
 offset_left = 5.0
 offset_top = 10.0
 offset_right = 251.0
@@ -251,7 +221,6 @@ theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/ButtonPanel/MarginContainer/HFlowContainer"]
-layout_mode = 2
 offset_right = 65.0
 offset_bottom = 35.0
 size_flags_horizontal = 3
@@ -259,7 +228,6 @@ text = "Reset
 "
 
 [node name="Button2" type="Button" parent="VBoxContainer/ButtonPanel/MarginContainer/HFlowContainer"]
-layout_mode = 2
 offset_left = 75.0
 offset_right = 198.0
 offset_bottom = 35.0

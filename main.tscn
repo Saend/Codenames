@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ddoxicbwrt2cj" path="res://Images/pexels-peter-fazekas-1170576_rotated.jpg" id="2_bcwqi"]
 [ext_resource type="Theme" uid="uid://b6curcx6e1af1" path="res://theme.tres" id="3_0ggon"]
 [ext_resource type="PackedScene" uid="uid://blkepaeyvbhj3" path="res://board.tscn" id="3_o2ghk"]
-[ext_resource type="PackedScene" uid="uid://5mc3l1lax2ia" path="res://players_ui.tscn" id="4_gd2p0"]
+[ext_resource type="PackedScene" uid="uid://cfhp0jvuxr2qf" path="res://players_ui.tscn" id="4_gd2p0"]
 [ext_resource type="PackedScene" uid="uid://c1bhr2yo43ev3" path="res://main_menu.tscn" id="5_r1cp7"]
 
 [node name="Main" type="CanvasLayer"]
