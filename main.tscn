@@ -109,6 +109,7 @@ text = "Disconnect
 visible = false
 
 [node name="ConnectionPopup" parent="." instance=ExtResource("7_nkx27")]
+visible = false
 
 [connection signal="join_spymasters" from="MarginContainer/UI/GameUI/HBoxContainer/VBoxContainer2/PlayersUI" to="." method="_on_players_ui_join_spymasters"]
 [connection signal="pressed" from="MarginContainer/UI/GameUI/HBoxContainer/VBoxContainer2/NewGameButton" to="." method="_on_new_game_button_pressed"]

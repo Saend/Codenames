@@ -197,6 +197,8 @@ grow_horizontal = 0
 text = "Quit"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/GridContainer/PlaceholderButton" to="." method="_on_join_server_pressed"]
+[connection signal="text_submitted" from="PanelContainer/MarginContainer/GridContainer/ServerAddress" to="." method="_on_server_address_text_submitted"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/GridContainer/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="text_submitted" from="PanelContainer/MarginContainer/GridContainer/PortNumber" to="." method="_on_port_number_text_submitted"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/GridContainer/CreateButton" to="." method="_on_create_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -10,6 +10,7 @@ signal join_server(player_name:String, address: String, port: int)
 @onready var server_address: LineEdit = find_child("ServerAddress")
 @onready var port_number: LineEdit = find_child("PortNumber")
 @onready var join_button: Button = find_child("JoinButton")
+@onready var create_button: Button = find_child("CreateButton")
 
 
 # VARIABLES
@@ -78,3 +79,11 @@ func _on_create_button_pressed():
 
 func press_join():
 	join_button.emit_signal("pressed")
+
+
+func _on_server_address_text_submitted(_new_text):
+	join_button.emit_signal("pressed")
+
+
+func _on_port_number_text_submitted(_new_text):
+	create_button.emit_signal("pressed")
