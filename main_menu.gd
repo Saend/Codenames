@@ -9,6 +9,7 @@ signal join_server(player_name:String, address: String, port: int)
 @onready var player_name: LineEdit = find_child("PlayerName")
 @onready var server_address: LineEdit = find_child("ServerAddress")
 @onready var port_number: LineEdit = find_child("PortNumber")
+@onready var join_button: Button = find_child("JoinButton")
 
 
 # VARIABLES
@@ -34,7 +35,7 @@ func _on_quit_button_pressed():
 	emit_signal("exit")
 
 
-func _on_join_server_pressed():
+func _on_join_button_pressed():
 	var player = player_name.text
 	if player.is_empty():
 		print_debug("Cannot join server: empty user name.")
@@ -59,7 +60,7 @@ func _on_join_server_pressed():
 	emit_signal("join_server", player, address, port)
 
 
-func _on_create_server_pressed():
+func _on_create_button_pressed():
 	var player = player_name.text
 	if player.is_empty():
 		print_debug("Cannot join server: empty user name.")
@@ -74,3 +75,6 @@ func _on_create_server_pressed():
 	
 	emit_signal("create_server", player, port)
 		
+
+func press_join():
+	join_button.emit_signal("pressed")

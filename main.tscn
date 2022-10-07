@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy2rd5ue8l8n5"]
+[gd_scene load_steps=8 format=3 uid="uid://blpl481uyw8lk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_f5jc5"]
 [ext_resource type="Texture2D" uid="uid://ddoxicbwrt2cj" path="res://Images/pexels-peter-fazekas-1170576_rotated.jpg" id="2_bcwqi"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blkepaeyvbhj3" path="res://board.tscn" id="3_o2ghk"]
 [ext_resource type="PackedScene" uid="uid://cfhp0jvuxr2qf" path="res://players_ui.tscn" id="4_gd2p0"]
 [ext_resource type="PackedScene" uid="uid://c1bhr2yo43ev3" path="res://main_menu.tscn" id="5_r1cp7"]
+[ext_resource type="PackedScene" uid="uid://7yrybnppg3mt" path="res://connection_popup.tscn" id="7_nkx27"]
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_f5jc5")
@@ -107,9 +108,12 @@ text = "Disconnect
 [node name="MainMenu" parent="MarginContainer/UI" instance=ExtResource("5_r1cp7")]
 visible = false
 
+[node name="ConnectionPopup" parent="." instance=ExtResource("7_nkx27")]
+
 [connection signal="join_spymasters" from="MarginContainer/UI/GameUI/HBoxContainer/VBoxContainer2/PlayersUI" to="." method="_on_players_ui_join_spymasters"]
 [connection signal="pressed" from="MarginContainer/UI/GameUI/HBoxContainer/VBoxContainer2/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/UI/GameUI/DisconnectButton" to="." method="_on_disconnect_button_pressed"]
 [connection signal="create_server" from="MarginContainer/UI/MainMenu" to="." method="_on_main_menu_create_server"]
 [connection signal="exit" from="MarginContainer/UI/MainMenu" to="." method="_on_main_menu_exit"]
 [connection signal="join_server" from="MarginContainer/UI/MainMenu" to="." method="_on_main_menu_join_server"]
+[connection signal="cancel" from="ConnectionPopup" to="." method="_on_popup_cancel"]

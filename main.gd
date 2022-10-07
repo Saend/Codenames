@@ -3,6 +3,7 @@ extends CanvasLayer
 # NODES
 @onready var game_ui: Control = find_child("GameUI")
 @onready var main_menu: Control = find_child("MainMenu")
+@onready var popup:  = find_child("ConnectionPopup")
 @onready var board: Board = find_child("Board")
 @onready var players_ui: PlayersUI = find_child("PlayersUI")
 
@@ -13,6 +14,7 @@ var player_name: String
 func _ready():
 	game_ui.hide()
 	main_menu.show()
+	popup.hide()
 
 
 func _on_main_menu_exit():
@@ -52,8 +54,14 @@ func _on_main_menu_join_server(_name, address, port: int):
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(address, port)
 	multiplayer.multiplayer_peer = peer
-	multiplayer.connect("connected_to_server", _connected_to_server)
-	multiplayer.connect("server_disconnected", _server_disconnected, CONNECT_DEFERRED)
+	if not multiplayer.is_connected("connected_to_server", _connected_to_server):
+		multiplayer.connect("connected_to_server", _connected_to_server)
+	if not multiplayer.is_connected("server_disconnected", _server_disconnected):
+		multiplayer.connect("server_disconnected", _server_disconnected, CONNECT_DEFERRED)
+	
+	popup.text = "Connecting to %s" % address
+	popup.show()
+	
 
 
 @rpc(any_peer, call_local, reliable) func sync_cards(cards):
@@ -73,6 +81,7 @@ func _connected_to_server():
 	rpc_id(1, "set_player_info", {name = player_name})
 	main_menu.hide()
 	game_ui.show()
+	popup.hide()
 
 
 @rpc(any_peer, call_local, reliable) func set_player_info(info: Dictionary):
@@ -99,6 +108,10 @@ func _peer_disconnected(id):
 
 
 func _server_disconnected():
+	main_menu.press_join()
+
+
+func _on_popup_cancel():
 	reset()
 
 
@@ -114,5 +127,7 @@ func reset():
 
 func _on_new_game_button_pressed():
 	new_game()
+
+
 
 
