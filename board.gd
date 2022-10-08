@@ -4,7 +4,6 @@ class_name Board
 @onready var container: GridContainer = $GridContainer
 var starting_team
 
-
 @rpc(any_peer, call_local) func set_cards(cards):
 	for i in range(cards.size()):
 		if i < container.get_child_count():
