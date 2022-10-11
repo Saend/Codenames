@@ -40,6 +40,7 @@ func _on_join_button_pressed():
 	var player = player_name.text
 	if player.is_empty():
 		print_debug("Cannot join server: empty user name.")
+		return
 	
 	var uri = server_address.text.split(':')
 	var address = uri[0]
@@ -65,6 +66,7 @@ func _on_create_button_pressed():
 	var player = player_name.text
 	if player.is_empty():
 		print_debug("Cannot join server: empty user name.")
+		return
 		
 	var port = port_number.text.to_int()
 	if port <= 0:
