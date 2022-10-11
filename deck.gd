@@ -30,8 +30,8 @@ func deal_cards(total: int = 25, assassins: int = 1, blues: int = 9, reds: int =
 			
 	var cards = words.map(func(word): return {word = word, type = "Innocent", played = false})
 	for i in range(assassins): cards[i].type = "Assassin"
-	for i in range(assassins, assassins+blues-1): cards[i].type = "Blue"
-	for i in range(assassins+blues, assassins+blues+reds-1): cards[i].type = "Red"
+	for i in range(assassins, assassins+blues): cards[i].type = "Blue"
+	for i in range(assassins+blues, assassins+blues+reds): cards[i].type = "Red"
 	
 	cards.shuffle()
 	return cards

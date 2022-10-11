@@ -18,7 +18,6 @@ theme = ExtResource("1_gomtl")
 script = ExtResource("1_o6q5n")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -36,7 +35,6 @@ theme_override_font_sizes/font_size = 150
 text = "CODENAMES"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -51,7 +49,6 @@ grow_vertical = 2
 theme = SubResource("Theme_vdvbn")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
 offset_right = 617.0
 offset_bottom = 233.0
 theme_override_constants/margin_left = 50
@@ -60,7 +57,6 @@ theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 25
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
 offset_left = 50.0
 offset_top = 25.0
 offset_right = 567.0
@@ -71,7 +67,6 @@ columns = 3
 
 [node name="PlayerLbel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(64, 0)
-layout_mode = 2
 offset_left = 2.0
 offset_top = 6.0
 offset_right = 80.0
@@ -81,7 +76,6 @@ text = "PLAYER"
 horizontal_alignment = 2
 
 [node name="PlayerName" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 96.0
 offset_right = 404.0
 offset_bottom = 43.0
@@ -91,7 +85,6 @@ max_length = 16
 
 [node name="PlaceholderButton" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 2
 offset_left = 420.0
 offset_right = 517.0
 offset_bottom = 43.0
@@ -99,14 +92,12 @@ text = "Empty"
 
 [node name="Placeholder3" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-layout_mode = 2
 offset_top = 43.0
 offset_right = 80.0
 offset_bottom = 70.0
 
 [node name="Placeholder5" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-layout_mode = 2
 offset_left = 96.0
 offset_top = 43.0
 offset_right = 404.0
@@ -114,7 +105,6 @@ offset_bottom = 70.0
 
 [node name="Placeholder6" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-layout_mode = 2
 offset_left = 420.0
 offset_top = 43.0
 offset_right = 517.0
@@ -122,7 +112,6 @@ offset_bottom = 70.0
 
 [node name="ServerLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(64, 0)
-layout_mode = 2
 offset_top = 76.0
 offset_right = 80.0
 offset_bottom = 106.0
@@ -131,7 +120,6 @@ text = "SERVER"
 horizontal_alignment = 2
 
 [node name="ServerAddress" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 96.0
 offset_top = 70.0
 offset_right = 404.0
@@ -140,7 +128,6 @@ size_flags_horizontal = 3
 placeholder_text = " address"
 
 [node name="JoinButton" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 420.0
 offset_top = 70.0
 offset_right = 517.0
@@ -149,14 +136,12 @@ text = "Join"
 
 [node name="Placeholder2" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-layout_mode = 2
 offset_top = 113.0
 offset_right = 80.0
 offset_bottom = 140.0
 
 [node name="OrLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-layout_mode = 2
 offset_left = 210.0
 offset_top = 116.0
 offset_right = 290.0
@@ -169,7 +154,6 @@ vertical_alignment = 1
 
 [node name="Placeholder4" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-layout_mode = 2
 offset_left = 420.0
 offset_top = 113.0
 offset_right = 517.0
@@ -177,7 +161,6 @@ offset_bottom = 140.0
 
 [node name="PortLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(64, 0)
-layout_mode = 2
 offset_left = 16.0
 offset_top = 146.0
 offset_right = 80.0
@@ -187,7 +170,6 @@ text = "PORT"
 horizontal_alignment = 2
 
 [node name="PortNumber" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 96.0
 offset_top = 140.0
 offset_right = 404.0
@@ -197,7 +179,6 @@ placeholder_text = "  number"
 max_length = 16
 
 [node name="CreateButton" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 420.0
 offset_top = 140.0
 offset_right = 517.0
@@ -206,7 +187,6 @@ text = "Create"
 
 [node name="QuitButton" type="Button" parent="."]
 custom_minimum_size = Vector2i(80, 40)
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
