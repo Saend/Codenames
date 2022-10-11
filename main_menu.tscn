@@ -40,16 +40,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -260.0
+offset_left = -308.5
 offset_top = -116.5
-offset_right = 260.0
+offset_right = 308.5
 offset_bottom = 116.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_vdvbn")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-offset_right = 520.0
+offset_right = 617.0
 offset_bottom = 233.0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 25
@@ -59,7 +59,7 @@ theme_override_constants/margin_bottom = 25
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
 offset_left = 50.0
 offset_top = 25.0
-offset_right = 470.0
+offset_right = 567.0
 offset_bottom = 208.0
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 0
@@ -77,7 +77,7 @@ horizontal_alignment = 2
 
 [node name="PlayerName" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
 offset_left = 96.0
-offset_right = 307.0
+offset_right = 404.0
 offset_bottom = 43.0
 size_flags_horizontal = 3
 placeholder_text = " name"
@@ -85,8 +85,8 @@ max_length = 16
 
 [node name="PlaceholderButton" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 323.0
-offset_right = 420.0
+offset_left = 420.0
+offset_right = 517.0
 offset_bottom = 43.0
 text = "Empty"
 
@@ -100,14 +100,14 @@ offset_bottom = 70.0
 custom_minimum_size = Vector2i(80, 0)
 offset_left = 96.0
 offset_top = 43.0
-offset_right = 307.0
+offset_right = 404.0
 offset_bottom = 70.0
 
 [node name="Placeholder6" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-offset_left = 323.0
+offset_left = 420.0
 offset_top = 43.0
-offset_right = 420.0
+offset_right = 517.0
 offset_bottom = 70.0
 
 [node name="ServerLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
@@ -122,16 +122,15 @@ horizontal_alignment = 2
 [node name="ServerAddress" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
 offset_left = 96.0
 offset_top = 70.0
-offset_right = 307.0
+offset_right = 404.0
 offset_bottom = 113.0
 size_flags_horizontal = 3
 placeholder_text = " address"
-max_length = 16
 
 [node name="JoinButton" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
-offset_left = 323.0
+offset_left = 420.0
 offset_top = 70.0
-offset_right = 420.0
+offset_right = 517.0
 offset_bottom = 113.0
 text = "Join"
 
@@ -143,9 +142,9 @@ offset_bottom = 140.0
 
 [node name="OrLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-offset_left = 161.0
+offset_left = 210.0
 offset_top = 116.0
-offset_right = 241.0
+offset_right = 290.0
 offset_bottom = 137.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 15
@@ -155,9 +154,9 @@ vertical_alignment = 1
 
 [node name="Placeholder4" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2i(80, 0)
-offset_left = 323.0
+offset_left = 420.0
 offset_top = 113.0
-offset_right = 420.0
+offset_right = 517.0
 offset_bottom = 140.0
 
 [node name="PortLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
@@ -173,16 +172,16 @@ horizontal_alignment = 2
 [node name="PortNumber" type="LineEdit" parent="PanelContainer/MarginContainer/GridContainer"]
 offset_left = 96.0
 offset_top = 140.0
-offset_right = 307.0
+offset_right = 404.0
 offset_bottom = 183.0
 size_flags_horizontal = 3
 placeholder_text = "  number"
 max_length = 16
 
 [node name="CreateButton" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
-offset_left = 323.0
+offset_left = 420.0
 offset_top = 140.0
-offset_right = 420.0
+offset_right = 517.0
 offset_bottom = 183.0
 text = "Create"
 

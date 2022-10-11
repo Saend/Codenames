@@ -128,6 +128,13 @@ func reset():
 func _on_new_game_button_pressed():
 	new_game()
 
-
+func _input(event):
+	if event.is_action_pressed("toggle_fullscreen"):
+		var mode = DisplayServer.window_get_mode()
+		print(mode)
+		if mode == DisplayServer.WindowMode.WINDOW_MODE_WINDOWED:
+			DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_EXCLUSIVE)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_WINDOWED)
 
 
