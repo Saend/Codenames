@@ -8,9 +8,9 @@ func _init(path: = ""):
 
 func read_word_list(path: String):
 	var file := FileAccess.open(path, FileAccess.READ)
-	var error := file.get_open_error()
+	var error := FileAccess.get_open_error()
 	if error:
-		print_debug("Could not open word list file: %", error)
+		print_debug("Could not open word list file: %s" % error_string(error))
 		return
 	
 	while file.get_position() < file.get_length():
