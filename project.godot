@@ -59,6 +59,7 @@ file_logging/max_log_files=2
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+mouse_cursor/custom_image="res://Images/left_ptr.png"
 window/stretch/mode="canvas_items"
 window/size/mode.standalone=3
 
