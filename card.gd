@@ -52,13 +52,12 @@ func refresh():
 
 
 func _on_card_button_up():
-	$AnimationPlayer.stop()
-	$AnimationPlayer.play("Click")
 	if multiplayer.has_multiplayer_peer():
 		rpc("play_card")
 
 
 @rpc(any_peer, call_local) func play_card():
+	$AnimationPlayer.play("Click")
 	played = true
 	refresh()
 
