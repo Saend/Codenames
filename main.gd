@@ -41,7 +41,10 @@ func _on_main_menu_create_server(_name, port):
 
 func new_game():
 	var deck := Deck.new("res://Lists/french.txt")
-	var cards: Array = deck.deal_cards(board.get_board_size())
+	var red_start = bool(randi_range(0,1))
+	var red_count = 8 + (1 if red_start else 0)
+	var blue_count = 8 + (0 if red_start else 1)
+	var cards: Array = deck.deal_cards(board.get_board_size(), blue_count, red_count)
 	rpc("sync_cards", cards)
 	
 	var players = players_ui.get_players()

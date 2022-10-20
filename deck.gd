@@ -18,7 +18,7 @@ func read_word_list(path: String):
 	file = null
 
 
-func deal_cards(total: int = 25, assassins: int = 1, blues: int = 9, reds: int = 8):
+func deal_cards(total: int, blues: int, reds: int, assassins: int = 1):
 	assert(total >= assassins + blues + reds)
 	print_debug("Generating cards of %d word_list." % total)
 	
