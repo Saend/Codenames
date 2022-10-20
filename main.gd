@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var board: Board = find_child("Board")
 @onready var players_ui: PlayersUI = find_child("PlayersUI")
 
+
 # VARIABLES
 var player_name: String
 
@@ -138,3 +139,5 @@ func _input(event):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
+func _on_board_score_changed(red_score, red_count, blue_score, blue_count):
+	players_ui.set_score(red_score, red_count, blue_score, blue_count)

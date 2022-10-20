@@ -13,13 +13,16 @@ const innocent_front_texture: Texture2D = preload("res://Images/innocent_front.s
 const red_back_texture: Texture2D = preload("res://Images/red_back.svg")
 const red_front_texture: Texture2D = preload("res://Images/red_front.svg")
 
+# SIGNALS
+signal played(type) 
+
 # NODES
 @onready var label: Label = $Label
 
 # VARIABLES
 var word: String
 var type: String
-var played: bool = false
+var is_played: bool = false
 var show_type: bool = false
 
 var front: Texture2D
@@ -27,6 +30,14 @@ var back: Texture2D
 
 
 # FUNCTIONS
+func set_data(data):
+	word = data.word
+	type = data.type
+	is_played = data.is_played
+	show_type = data.show_type
+	refresh()
+
+
 func refresh():
 	match type:
 		"Blue": 
@@ -46,9 +57,9 @@ func refresh():
 			front = blank_front_texture
 	
 	label.text = word
-	label.visible = not played
+	label.visible = not is_played
 	texture_normal = front if show_type else blank_front_texture
-	disabled = played
+	disabled = is_played
 
 
 func _on_card_button_up():
@@ -58,8 +69,9 @@ func _on_card_button_up():
 
 @rpc(any_peer, call_local) func play_card():
 	$AnimationPlayer.play("Click")
-	played = true
+	is_played = true
 	refresh()
+	emit_signal("played", type)
 
 
 func _on_card_focus_entered():

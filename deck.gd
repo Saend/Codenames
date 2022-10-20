@@ -28,7 +28,7 @@ func deal_cards(total: int = 25, assassins: int = 1, blues: int = 9, reds: int =
 		if not words.has(word):
 			words.append(word)
 			
-	var cards = words.map(func(word): return {word = word, type = "Innocent", played = false})
+	var cards = words.map(func(word): return {word = word, type = "Innocent", is_played = false})
 	for i in range(assassins): cards[i].type = "Assassin"
 	for i in range(assassins, assassins+blues): cards[i].type = "Blue"
 	for i in range(assassins+blues, assassins+blues+reds): cards[i].type = "Red"

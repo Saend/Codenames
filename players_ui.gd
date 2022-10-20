@@ -1,17 +1,22 @@
 extends Control
 class_name PlayersUI
 
+
 # SIGNAL
 signal join_spymasters
+
 
 # NODES
 @onready var spymaster_list: ItemList = find_child("SpymasterList")
 @onready var player_list: ItemList = find_child("PlayerList")
 @onready var join_spymasters_button: Button = find_child("JoinSpymastersButton")
+@onready var red_score_label: Label = find_child("RedScore")
+@onready var blue_score_label: Label = find_child("BlueScore")
 
 
 # VARIABLES
 var players: Dictionary = {}
+
 
 # FUNCTIONS
 func set_players(_players):
@@ -37,3 +42,7 @@ func get_players():
 func _on_join_spymasters_button_pressed():
 	emit_signal("join_spymasters")
 	
+
+func set_score(red_score: int, red_count: int, blue_score: int, blue_count: int):
+	red_score_label.text = "%d/%d" % [red_score, red_count]
+	blue_score_label.text = "%d/%d" % [blue_score, blue_count]
